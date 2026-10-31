@@ -167,13 +167,17 @@ export default function Privacy() {
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">
                   If you have any questions about this Privacy Policy, please
                   contact us at{" "}
-                  <a
-                    href={`mailto:${SITE_CONFIG.contactEmail}`}
-                    className="text-brand-600 underline hover:text-brand-700"
-                  >
-                    {SITE_CONFIG.contactEmail}
-                  </a>
-                  .
+                  {SITE_CONFIG.contactEmails.map((email, idx) => (
+                    <span key={email}>
+                      <a
+                        href={`mailto:${email}`}
+                        className="text-brand-600 underline hover:text-brand-700"
+                      >
+                        {email}
+                      </a>
+                      {idx < SITE_CONFIG.contactEmails.length - 1 ? " or " : "."}
+                    </span>
+                  ))}
                 </p>
               </div>
             </div>

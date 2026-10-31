@@ -129,20 +129,23 @@ export default function Contact() {
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <a
-                    href={`mailto:${SITE_CONFIG.contactEmail}`}
-                    className="flex items-center gap-4 rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-300 hover:bg-brand-50/50"
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium text-slate-500">Email</p>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {SITE_CONFIG.contactEmail}
-                      </p>
-                    </div>
-                  </a>
+                  {SITE_CONFIG.contactEmails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="flex items-center gap-4 rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-300 hover:bg-brand-50/50"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                        <Mail className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-medium text-slate-500">Email</p>
+                        <p className="text-sm font-semibold text-slate-900">
+                          {email}
+                        </p>
+                      </div>
+                    </a>
+                  ))}
                 </div>
 
                 {/* Note about form */}
@@ -183,13 +186,17 @@ export default function Contact() {
                           Your message has been validated successfully. However,
                           no backend email service is currently configured —
                           please send your inquiry directly to{" "}
-                          <a
-                            href={`mailto:${SITE_CONFIG.contactEmail}`}
-                            className="font-semibold underline"
-                          >
-                            {SITE_CONFIG.contactEmail}
-                          </a>
-                          .
+                          {SITE_CONFIG.contactEmails.map((email, idx) => (
+                            <span key={email}>
+                              <a
+                                href={`mailto:${email}`}
+                                className="font-semibold underline"
+                              >
+                                {email}
+                              </a>
+                              {idx < SITE_CONFIG.contactEmails.length - 1 ? " or " : "."}
+                            </span>
+                          ))}
                         </p>
                       </div>
                     </div>

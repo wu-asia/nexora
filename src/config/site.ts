@@ -9,8 +9,8 @@ export const SITE_CONFIG = {
     "Nexora provides IT consulting, software development, technical support, and technology solutions to help individuals and businesses solve technical challenges and build better digital experiences.",
   // ↓ Change this to your real domain after deployment
   url: "https://nexora.example.com",
-  // ↓ Change this to your real contact email
-  contactEmail: "hello@nexora.example.com",
+  // ↓ Change these to your real contact emails
+  contactEmails: ["nexoranta@gmail.com", "admin@kristina.de5.net"],
   // ↓ Optional: change or remove these
   social: {
     github: "https://github.com/nexora",

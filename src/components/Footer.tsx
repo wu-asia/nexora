@@ -57,13 +57,16 @@ export default function Footer() {
                   <Twitter className="h-4 w-4" />
                 </a>
               )}
-              <a
-                href={`mailto:${SITE_CONFIG.contactEmail}`}
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
+              {SITE_CONFIG.contactEmails.map((email) => (
+                <a
+                  key={email}
+                  href={`mailto:${email}`}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+                  aria-label={`Email: ${email}`}
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 

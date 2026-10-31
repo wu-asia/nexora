@@ -21,7 +21,7 @@ export default function ContactCTA() {
               question, we're happy to help. Reach out and let's talk about what
               you need.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand-700 shadow-lg transition-all hover:bg-slate-50 hover:shadow-xl active:scale-[0.98]"
@@ -29,13 +29,16 @@ export default function ContactCTA() {
                 <Mail className="h-4 w-4" />
                 Get in Touch
               </Link>
-              <a
-                href={`mailto:${SITE_CONFIG.contactEmail}`}
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/10 active:scale-[0.98]"
-              >
-                {SITE_CONFIG.contactEmail}
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              {SITE_CONFIG.contactEmails.map((email) => (
+                <a
+                  key={email}
+                  href={`mailto:${email}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/10 active:scale-[0.98]"
+                >
+                  {email}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
