@@ -13,9 +13,10 @@ export const SITE_CONFIG = {
   contactEmails: ["nexoranta@gmail.com", "admin@kristina.de5.net"],
   // ↓ Optional: change or remove these
   social: {
-    github: "https://github.com/nexora",
-    linkedin: "https://www.linkedin.com/company/nexora",
-    twitter: "",
+    github: "",
+    linkedin: "",
+    twitter: "https://x.com/nexoranta",
+    instagram: "https://instagram.com/nexoranta",
   },
 };
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { SITE_CONFIG, SERVICES } from "../config/site";
 
 export default function Footer() {
@@ -52,9 +52,20 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
-                  aria-label="Twitter"
+                  aria-label="X (Twitter)"
                 >
                   <Twitter className="h-4 w-4" />
+                </a>
+              )}
+              {SITE_CONFIG.social.instagram && (
+                <a
+                  href={SITE_CONFIG.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
                 </a>
               )}
               {SITE_CONFIG.contactEmails.map((email) => (
