@@ -3,6 +3,11 @@ node_modules/
 .pnp
 .pnp.js
 
+# Lock files - let Cloudflare resolve fresh
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 # Build output
 dist/
 dist-ssr/
